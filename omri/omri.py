@@ -7,12 +7,12 @@ Created on Sat Sep 23 10:45:42 2017
 """
 
 
-import PIL
+#import PIL
 from PIL import Image
 import numpy as np
-import .utils
+#import omri.utils
 
-mFile = Image.open("music.JPG")
+mFile = Image.open("samples/music.JPG")
 #mFile.show()
 width, height = mFile.size
 
@@ -149,8 +149,8 @@ def vEdgeArray1(inArray):
 vGreyEdges = vEdgeArray1(linArray)
 
     
-display(vGreyEdges)
-display(greyEdges)
+#display(vGreyEdges)
+#display(greyEdges)
     
 upper = lambda x: (x < 80)
 lower = lambda x: (x > 170)
@@ -268,7 +268,6 @@ def wholeStaffSlice(im, x, y, offsets):
 myOffsets = np.array([8, 9, 10])
 
 #staffStart = searchStaffSlice(thinHlines, myOffsets)
-staffStart
 
 staffSlice(thinHlines, 0, 0, myOffsets)
 atOffsets(thinHlines, 0, 0, myOffsets, lower, lower)
@@ -280,7 +279,7 @@ firstStaffY = np.argwhere(staffYs < 80)
 firstStaffY[0][0]
 
 #ans = searchStaffSlice(thinHlines, 466, 0, myOffsets)
-ans
+#ans
 
 #Lets, get where the staff starts...
 staffStartY = np.argwhere(np.count_nonzero(thinHlines < 100, axis = 0) > 4)[0][0]
@@ -351,10 +350,10 @@ Image.fromarray(np.uint8(k), mode="L").show()
 cleanClefs = np.argwhere(np.count_nonzero(thinHlines < 110, axis = 0) > 4)
 
 #Clef
-display(linArray[:, 436:469])
+#display(linArray[:, 436:469])
 #Next
-display(linArray[:, 471:481])
-display(thinHlines[:, 490:498])
+#display(linArray[:, 471:481])
+#display(thinHlines[:, 490:498])
 #Next
 
 #From y, find a right edge...this is like the start event for finding a note etc
@@ -369,15 +368,15 @@ def findRight(vEdgeArray, y):
 
             
 findRight(vGreyEdges, 631)
-display(linArray[:, 600:629])
-display(vGreyEdges[:, 600:629])
-display(vGreyEdges[:, 631:638])
+#display(linArray[:, 600:629])
+#display(vGreyEdges[:, 600:629])
+#display(vGreyEdges[:, 631:638])
+#
+#toGrey2(linearBig)
 
-toGrey2(linearBig)
-
-y1 = 714
-        vEdgeArray = vGreyEdges
-        
+#y1 = 714
+#        vEdgeArray = vGreyEdges
+#        
         
         
 
